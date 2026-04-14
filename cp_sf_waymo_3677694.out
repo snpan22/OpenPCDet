@@ -1,0 +1,32 @@
+---------------------------------------
+Begin Slurm Prolog: Feb-01-2026 15:39:44
+Job ID:    3677694
+User ID:   spanse30
+Account:   gts-gchou3-ideas_l40s
+Job name:  cp_mf_waymo
+Partition: gpu-l40s
+QOS:       inferno
+---------------------------------------
+==> Checkpoint trained from version: pcdet+0.6.0+233f849==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+==> Checkpoint trained from version: pcdet+0.6.0+233f849
+
+Start the waymo evaluation...
+Number: (pd, 5376974) VS. (gt, 1630510)
+Level 1: 1377451, Level2: 253059)
+Wait 30 seconds for next check (progress: 0.0 / 0 minutes): /storage/project/r-gchou3-0/spanse30/OpenPCDet/output/cfgs/custom_models/centerpoint_multiframe_waymo/default/ckpt ---------------------------------------
+Begin Slurm Epilog: Feb-02-2026 04:06:17
+Job ID:        3677694
+User ID:       spanse30
+Account:       gts-gchou3-ideas_l40s
+Job name:      cp_mf_waymo
+Resources:     cpu=32,gres/gpu:l40s=8,mem=160G,node=1
+Rsrc Used:     cput=16-14:09:36,vmem=0,walltime=12:26:33,mem=167742276K,energy_used=0
+Partition:     gpu-l40s
+QOS:           inferno
+Nodes:         atl1-1-03-007-31-0
+---------------------------------------

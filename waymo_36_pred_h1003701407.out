@@ -1,0 +1,24 @@
+---------------------------------------
+Begin Slurm Prolog: Feb-02-2026 21:02:18
+Job ID:    3701407
+User ID:   spanse30
+Account:   gts-gchou3
+Job name:  waymo_36_pred
+Partition: gpu-h100
+QOS:       inferno
+---------------------------------------
+Start the waymo evaluation...
+Number: (pd, 21301894) VS. (gt, 6439341)
+Level 1: 5549661, Level2: 889680)
+---------------------------------------
+Begin Slurm Epilog: Feb-03-2026 02:10:23
+Job ID:        3701407
+User ID:       spanse30
+Account:       gts-gchou3
+Job name:      waymo_36_pred
+Resources:     cpu=16,gres/gpu:h100=2,mem=256G,node=1
+Rsrc Used:     cput=3-10:09:36,vmem=0,walltime=05:08:06,mem=126142736K,energy_used=0
+Partition:     gpu-h100
+QOS:           inferno
+Nodes:         atl1-1-01-006-19-0
+---------------------------------------
