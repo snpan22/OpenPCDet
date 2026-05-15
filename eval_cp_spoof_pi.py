@@ -61,6 +61,7 @@ def parse_args():
     parser.add_argument('--log_file', default="waymo_eval.log")
     parser.add_argument('--metrics_out', default="metrics.json")
     parser.add_argument('--asr_path', required=True)
+    parser.add_argument('--clean_preds', required=True)
 
     return parser.parse_args()
 
@@ -147,7 +148,7 @@ def run_evaluations(args, logger):
         f[:-4] for f in os.listdir(save_dir_preds)
     )
     
-    result_file = "output/cfgs/custom_models/centerpoint_singleframe_waymo/default/eval/eval_with_train/epoch_30/val/result.pkl"
+    result_file = args.clean_preds
     with open(result_file, "rb") as f:
         result = pkl.load(f)
 
@@ -162,9 +163,9 @@ def run_evaluations(args, logger):
     scores_fp_vehicles = []
     scores_fp_ped = []
     scores_fp_cyc = []
-    spoof_rc_survivability_vehicles = []
-    spoof_rc_survivability_ped = []
-    spoof_rc_survivability_cyc = []
+    # spoof_rc_survivability_vehicles = []
+    # spoof_rc_survivability_ped = []
+    # spoof_rc_survivability_cyc = []
 
     asr_annos_det_mode = {}
     try: 
@@ -228,7 +229,7 @@ def run_evaluations(args, logger):
 
             except Exception as e:
                 logger.info(
-                    "MSF fallback (segment=%s frame=%d) reason=%s",
+                    "fallback (segment=%s frame=%d) reason=%s",
                     current_segment, seg_idx, str(e)
                 )
                 
@@ -345,12 +346,7 @@ def run_evaluations(args, logger):
         segment_frame_counters[segment] += 1
     for pred, info in zip(det_annos, dataset.infos):
         assert pred['frame_id'] == info['frame_id']
-    # --------------------------------------------------------
-    # Progress indicator during evaluation
-    # --------------------------------------------------------
-    # dataset.evaluation() is monolithic, so we simulate progress
-    # by wrapping the call — still useful for tracking runtime
-    # --------------------------------------------------------
+  
 
     logger.info("\n\nStarting Waymo evaluation")
 
